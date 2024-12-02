@@ -2,9 +2,7 @@
 # Day 2
 
 def is_valid(numbers):
-    diffs = []
-    for current, next in zip(numbers, numbers[1:]):
-        diffs.append(next-current)
+    diffs = [next-current for current, next in zip(numbers, numbers[1:])]
     return all(1 <= x <= 3 for x in diffs) or all(-1>= x >= -3 for x in diffs)
 
 
